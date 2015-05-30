@@ -2,7 +2,7 @@
 CPGEvolution
 ============
 
-Evolution of central pattern generators for the control of a five-link planar bipedal walking mechanism. Musculoskeletal system, physics engine, and genetic algorithms are coded in C#. PICBASIC code for the BasicStamp II interface circuit for the hardware implementation of the robot are under the "BasicStamp" folder.
+Evolution of central pattern generators for the control of a five-link planar bipedal walking mechanism. The physics engine, musculoskeletal system, neural network loop, and genetic algorithms are coded in C#. Several versions of the PICBASIC code for the BasicStamp II interface circuit for the hardware implementation of the robot are given under the "BasicStamp" folder.
 
 For more information, please refer to the article:
 
