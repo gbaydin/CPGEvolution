@@ -1,0 +1,43 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+jointCounter VAR Word
+joints VAR Word(4)
+jointTimings VAR Byte(4)
+' 300 - 1300 -> 0 - 180 degrees
+
+Main:
+
+  joints(0) = 300
+  joints(1) = 300
+  joints(2) = 300
+  joints(3) = 300
+  GOSUB UpdateJoints
+  SEROUT 16, 16780, [LF]
+
+  DO
+    SERIN 16, 16780, [DEC joints(0), DEC joints(1), DEC joints(2), DEC joints(3)]
+    'SERIN 16, 16780, [DEC joints(3)]
+    GOSUB UpdateJoints
+
+    SEROUT 16, 16780, [LF]
+
+  LOOP
+
+  END
+
+
+UpdateJoints:
+  HIGH 0
+
+  FOR jointCounter = 1 TO 35
+    PULSOUT 12, joints(0)
+    PULSOUT 13, joints(1)
+    PULSOUT 14, joints(2)
+    PULSOUT 15, joints(3)
+    PAUSE 15
+  NEXT
+
+  LOW 0
+
+  RETURN

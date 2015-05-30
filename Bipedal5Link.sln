@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bipedal5Link", "Bipedal5Link\Bipedal5Link.csproj", "{B29B68C7-EEBA-42A0-8681-EA2E8636D691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bipedal5LinkTest", "Bipedal5LinkTest\Bipedal5LinkTest.csproj", "{7172126C-1AAD-423B-A26B-1A80526A3532}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardwareTest", "HardwareTest\HardwareTest.csproj", "{5D2E3716-B40F-429D-BD61-8FFF83B92FC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B29B68C7-EEBA-42A0-8681-EA2E8636D691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29B68C7-EEBA-42A0-8681-EA2E8636D691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29B68C7-EEBA-42A0-8681-EA2E8636D691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29B68C7-EEBA-42A0-8681-EA2E8636D691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7172126C-1AAD-423B-A26B-1A80526A3532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7172126C-1AAD-423B-A26B-1A80526A3532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7172126C-1AAD-423B-A26B-1A80526A3532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7172126C-1AAD-423B-A26B-1A80526A3532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2E3716-B40F-429D-BD61-8FFF83B92FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2E3716-B40F-429D-BD61-8FFF83B92FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2E3716-B40F-429D-BD61-8FFF83B92FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2E3716-B40F-429D-BD61-8FFF83B92FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

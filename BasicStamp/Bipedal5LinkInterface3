@@ -1,0 +1,67 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+j0 VAR Byte
+j1 VAR Byte
+j2 VAR Byte
+j3 VAR Byte
+' 300 - 1300 -> 0 - 180 degrees
+
+CommandStart CON 230
+CommandReset CON 231
+CommandStop CON 232
+ResponseOK CON 253
+
+counter VAR Byte
+
+Main:
+
+  DO
+    SERIN 16, 84, 500, NoStart, [j0, j1, j2, j3]
+
+    IF (j0 = CommandStart) THEN
+      GOTO Run
+    ELSEIF (j0 = CommandReset) THEN
+      GOSUB ResetJoints
+    ENDIF
+
+    IF (j0 < 226) THEN
+      GOTO Run
+    ENDIF
+
+    NoStart:
+    TOGGLE 0
+  LOOP
+
+  Run:
+  HIGH 0
+  DO
+    LOW 1
+    SERIN 16, 84, 20, NoUpdate, [j0, j1, j2, j3]
+    IF (j0 > 225) THEN
+      GOTO Main
+    ENDIF
+    HIGH 1
+    PAUSE 15
+
+    NoUpdate:
+    PULSOUT 12, 300 + (j0 * 4)
+    PULSOUT 13, 300 + (j1 * 4)
+    PULSOUT 14, 300 + (j2 * 4)
+    PULSOUT 15, 300 + (j3 * 4)
+
+  LOOP
+
+  END
+
+ResetJoints:
+  HIGH 1
+  FOR counter = 0 TO 20
+    PAUSE 20
+
+    PULSOUT 12, 748
+    PULSOUT 13, 748
+    PULSOUT 14, 748
+    PULSOUT 15, 300
+  NEXT
+  LOW 1
+  RETURN

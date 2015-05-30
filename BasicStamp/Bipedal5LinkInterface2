@@ -1,0 +1,19 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+j0 VAR Byte
+' 300 - 1300 -> 0 - 180 degrees
+
+Main:
+
+  j0 = 0
+
+  DO
+    'SERIN 16, 16780, NoData, 15, NoData, [DEC j0, DEC j1, DEC j2, DEC j3]
+    SERIN 16, 16780, [j0]
+    'SEROUT 16, 16780, [LF]
+
+    PULSOUT 15, 300 + j0
+
+  LOOP
+
+  END

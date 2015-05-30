@@ -1,0 +1,35 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+j0 VAR Byte
+j1 VAR Byte
+j2 VAR Byte
+j3 VAR Byte
+' 300 - 1300 -> 0 - 180 degrees
+
+Main:
+
+  DO
+    SERIN 16, 16468, 500, NoStart, [j0, j1, j2, j3]
+    GOTO Run
+
+    NoStart:
+    TOGGLE 0
+  LOOP
+
+  Run:
+  HIGH 0
+  DO
+    LOW 1
+    SERIN 16, 16468, 20, NoUpdate, [j0, j1, j2, j3]
+    HIGH 1
+    PAUSE 20
+
+    NoUpdate:
+    PULSOUT 12, 300 + (j0 * 4)
+    PULSOUT 13, 300 + (j1 * 4)
+    PULSOUT 14, 300 + (j2 * 4)
+    PULSOUT 15, 300 + (j3 * 4)
+
+  LOOP
+
+  END
